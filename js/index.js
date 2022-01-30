@@ -35,13 +35,14 @@ function isCollide(snake) {
     if(snake[0].x >= 18 || snake[0].x <=0 || snake[0].y >= 18 || snake[0].y <=0){
         return true;
     }
-        
+    
     return false;
 }
 
 
 function gameEngine(){
-    // Part 1: Updating the snake array & Food
+    // Part 1:
+    // if u collide
     if(isCollide(snakeArr)){
         gameOverSound.play();
         music.pause();
@@ -77,7 +78,7 @@ function gameEngine(){
     snakeArr[0].x += inputDir.x;
     snakeArr[0].y += inputDir.y;
 
-    // Part 2: Display the snake and Food
+    // Part 2: 
     // Display the snake
     board.innerHTML = "";
     snakeArr.forEach((e, index)=>{
@@ -100,10 +101,7 @@ function gameEngine(){
     foodElement.classList.add('food')
     board.appendChild(foodElement);
 
-
 }
-
-
 
 
 // Main logic starts here
